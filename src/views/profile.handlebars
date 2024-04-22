@@ -1,0 +1,14 @@
+<div class="container">
+    <h1 class="perfil">Perfil de Usuario</h1>
+    <a href="/carts" class="btn btn-outline-primary">Carrito</a>
+    <div class="box-perfil">
+        <h4>Nombre: {{ this.first_name }}</h4>
+        <h4>Apellido: {{ this.last_name }}</h4>
+        <h4>Correo electrónico: {{ this.email }}</h4>
+        <h4>Edad: {{ this.age }}</h4>
+        <h4>Cart : {{this.cart}} </h4>
+        <form action="/logout" method="GET" class="form-logout">
+            <button type="submit" class="btn btn-outline-danger">Logout</button>
+        </form>
+    </div>
+</div>

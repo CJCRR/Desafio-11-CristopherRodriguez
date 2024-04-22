@@ -1,0 +1,11 @@
+.paginate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    .prevNext {
+        text-decoration: none;
+        color: black;
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,29 @@
+
+<div class="container-fluid product">
+    <div class="box-product">
+        <div class="row" id={{id}}>
+            <div class="col">
+                <img src={{this.product.thumbnail}} class="card-img-top" alt={{this.product.title}}>
+            </div>
+            <div class=" col">
+                <h5 class="card-title">{{this.product.title}}</h5>
+                <p class="card-title">{{this.product._id}}</p>
+                <p class="card-text">Descripción: {{this.product.description}}</p>
+                <p class="card-text">Código: {{this.product.code}}</p>
+                <p class="card-text">categoria: {{this.product.category}}</p>
+                <div class="row">
+                    <p class="card-text col">Stock: {{this.product.stock}}</p>
+                    <p class="card-text col">Precio: ${{this.product.price}}</p>
+                </div>
+                <div>
+                    
+                    <button class="addToCartBtn btn btn-outline-primary " cID={{this.cartID}} data-product-id={{this.product._id}}>Agregar al
+                        carrito</button>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/addProductCart.js"></script>

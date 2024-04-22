@@ -1,0 +1,51 @@
+
+
+<div class="container realTimeProducts">
+  <h1>Ver Lista de Productos Tiempo Real</h1>
+  <div class="row box-form">
+    <div class="box-form-add col">
+      <h2>Registra un nuevo producto</h2>
+      <form action="./api/products" method="POST" id="formProducts" class="formProducts">
+        <label class="label" for="title">Nombre</label>
+        <input class="controls name" type="text" name="title" id="title" placeholder="Nombre" required />
+        <label class="label" for="description">Descripción</label>
+        <input class="controls description" type="text" name="description" id="description" placeholder="Descripción" required />
+        <div class="formProducts-1 row">
+          <label class="label col" for="code">Code
+            <input class="controls" type="text" name="code" id="code" placeholder="Código" required />
+          </label>
+          <label class="label col" for="stock">Stock
+            <input class="controls" type="number " name="stock" id="stock" placeholder="0" required />
+          </label>
+          <label class="label col" for="price">Precio $
+            <input class="controls" type="float" name="price" id="price" placeholder="00.00" required />
+          </label>
+        </div>  
+        <label class="label" for="thumbnail">Imagen</label>
+        <input class="controls thumbnail" type="text" name="thumbnail" id="thumbnail" placeholder="imagen.jpg" />
+        <label class="label" for="category">Category</label>
+        <input class="controls category" type="text" name="category" id="category" placeholder="category" required />
+        <button class="btn btn-outline-success" id="add-btn" type="submit">Registrar</button>  
+      </form>
+    </div>
+    <div class="col box-form-delet">
+      <h2>Eliminar producto</h2>
+      <div class="box-form-delet-1">
+        <input class="controls delete-id" type="text" name="pid" id="pid" placeholder="ID del producto" />
+        <button type="button" class="btn btn-outline-danger" id="delete-btn">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container box-products-realTime">
+  <div class="row row-cols-1 row-cols-md-3 g-4" id="container">
+
+  </div>
+</div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.js" integrity="sha512-rwu37NnL8piEGiFhe2c5j4GahN+gFsIn9k/0hkRY44iz0pc81tBNaUN56qF8X4fy+5pgAAgYi2C9FXdetne5sQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

@@ -1,0 +1,11 @@
+@import "./base/_global";
+
+
+
+@import "./pages/_home";
+@import "./pages/_realTimeProducts";
+@import "./pages/_product";
+@import "./pages/_loginRegister";
+@import "./pages/_profile";
+
+//sass --watch src/public/scss:src/public/css

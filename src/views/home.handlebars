@@ -1,0 +1,42 @@
+<div class="container">
+  <div>
+    <p>Bienvenido/a, {{userInfo.first_name}}. Su rol es : {{userInfo.role}} </p>
+  <h1>Lista de todos los productos</h1>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {{#each docs}}
+    <div class="col">
+      <div class="card h-100" id={{this.id}}>
+        <img src={{this.thumbnail}} class="card-img-top" alt={{this.title}}>
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-title">{{this._id}}</p>
+          <p class="card-text">Descripción: {{this.description}}</p>
+          <p class="card-text">Código: {{this.code}}</p>
+          <p class="card-text">categoria: {{this.category}}</p>
+          <div class="row">
+            <p class="card-text col">Stock: {{this.stock}}</p>
+            <p class="card-text col">Precio: ${{this.price}}</p>
+          </div>
+          <div>
+            <a href=/realtimeproducts/{{this._id}} class="btn btn-outline-primary col">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+    
+  </div>
+  <div class="paginate">
+    {{#if hasPrevPage}}
+    <a href="{{ prevLink }}" class="prevNext">Anterior</a>
+    {{/if}}
+    {{#if hasNextPage}}
+    <a href="{{ nextLink }}" class="prevNext">Siguiente</a>
+    {{/if}}
+</div>
+</div>
+
+<script src="/js/addProductCart.js"></script>
+
+

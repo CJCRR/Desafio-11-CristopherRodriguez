@@ -1,0 +1,56 @@
+.realTimeProducts {
+    h1 {
+        text-align: center;
+    }
+    .box-form {
+        text-align: center;
+        gap: 10px;
+        margin-top: 20px;
+        input {
+            border-radius: 10px;
+
+        }
+        .box-form-add {
+            display: flex;
+            flex-direction: column;
+            .formProducts {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .name {
+                    width: 100%;
+                }
+                .description{
+                    width: 100%;
+                }
+                .thumbnail {
+                    width: 100%;
+                }
+                button {
+                    margin-top: 10px;
+                    width: 200px;
+                    
+                }
+            }
+        }
+        .box-form-delet {
+            .box-form-delet-1 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 100px;
+                .delete-id {
+                    width: 100%;
+                }
+                button {
+                    margin-top: 93px;
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+.box-products-realTime {
+    margin-top: 20px;
+}

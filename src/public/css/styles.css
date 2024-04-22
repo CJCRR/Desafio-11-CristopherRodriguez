@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.paginate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.paginate .prevNext {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+
+.realTimeProducts h1 {
+  text-align: center;
+}
+.realTimeProducts .box-form {
+  text-align: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.realTimeProducts .box-form input {
+  border-radius: 10px;
+}
+.realTimeProducts .box-form .box-form-add {
+  display: flex;
+  flex-direction: column;
+}
+.realTimeProducts .box-form .box-form-add .formProducts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.realTimeProducts .box-form .box-form-add .formProducts .name {
+  width: 100%;
+}
+.realTimeProducts .box-form .box-form-add .formProducts .description {
+  width: 100%;
+}
+.realTimeProducts .box-form .box-form-add .formProducts .thumbnail {
+  width: 100%;
+}
+.realTimeProducts .box-form .box-form-add .formProducts button {
+  margin-top: 10px;
+  width: 200px;
+}
+.realTimeProducts .box-form .box-form-delet .box-form-delet-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+.realTimeProducts .box-form .box-form-delet .box-form-delet-1 .delete-id {
+  width: 100%;
+}
+.realTimeProducts .box-form .box-form-delet .box-form-delet-1 button {
+  margin-top: 93px;
+  width: 200px;
+}
+
+.box-products-realTime {
+  margin-top: 20px;
+}
+
+.inicio {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.box-form-login {
+  display: flex;
+  flex-direction: column;
+}
+.box-form-login .formLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box-form-login .formLogin label {
+  margin-top: 20px;
+}
+.box-form-login .formLogin input {
+  border-radius: 10px;
+  width: 40%;
+  margin-top: 20px;
+}
+.box-form-login .formLogin .buttonsLogin {
+  width: 35%;
+  gap: 10px;
+  margin-top: 20px;
+}
+.box-form-login .formLogin .buttonsLogin button {
+  border-radius: 10px;
+}
+.box-form-login .loginGithub {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-form-login .loginGithub .pageGithub {
+  text-decoration: none;
+}
+.box-form-login .loginGithub .pageGithub .buttonGithub {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  gap: 15px;
+  background-color: #181717;
+  outline: 3px #181717 solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+.box-form-login .loginGithub .pageGithub .buttonGithub svg path {
+  transition: 400ms;
+}
+.box-form-login .loginGithub .pageGithub .buttonGithub:hover {
+  background-color: transparent;
+}
+.box-form-login .loginGithub .pageGithub .buttonGithub:hover .textGithub {
+  color: #181717;
+}
+.box-form-login .loginGithub .pageGithub .buttonGithub:hover svg path {
+  fill: #181717;
+}
+.box-form-login .loginGithub .pageGithub .buttonGithub .textGithub {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+.buttonRegister {
+  width: 20%;
+}
+
+.register {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.box-form-register {
+  display: flex;
+  flex-direction: column;
+}
+.box-form-register .formRegister {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box-form-register .formRegister label {
+  margin-top: 20px;
+}
+.box-form-register .formRegister input {
+  border-radius: 10px;
+  width: 40%;
+  margin-top: 20px;
+}
+.box-form-register .formRegister button {
+  width: 35%;
+  gap: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.perfil {
+  margin-top: 100px;
+}
+
+.box-perfil {
+  margin-top: 20px;
+}
+.box-perfil h4 {
+  margin-top: 20px;
+}
+.box-perfil .form-logout {
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=styles.css.map */
