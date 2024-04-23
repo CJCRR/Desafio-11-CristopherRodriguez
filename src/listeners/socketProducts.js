@@ -1,9 +1,10 @@
 import ProductManager from "../dao/manager/products.dao.js";
+import logger from "../logger.js";
 const pm = new ProductManager()
 
 const socketProducts = (socketServer) => {
     socketServer.on("connection", async (socket) => {
-        console.log("client connected")
+        logger.info("client connected")
         const listadeproductos = await pm.getAll()
         socketServer.emit("enviodeproducts", listadeproductos)
 
@@ -14,18 +15,18 @@ const socketProducts = (socketServer) => {
         })
 
         socket.on("deleteProduct", async (id) => {
-            console.log(id)
+            logger.info(id)
             await pm.delete(id)
             const listadeproductos = await pm.getAll()
             socketServer.emit("enviodeproducts", listadeproductos)
         })
 
         socket.on("nuevousuario", (usuario) => {
-            console.log("usuario", usuario)
+            logger.info("usuario", usuario)
             socket.broadcast.emit("broadcast", usuario)
         })
         socket.on("disconnect", () => {
-            console.log(`Usuario esta desconectado `)
+            logger.info(`Usuario esta desconectado `)
         })
 
     })

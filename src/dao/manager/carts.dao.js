@@ -1,6 +1,6 @@
 import { cartModel } from "../models/carts.model.js"
 import  productsModel  from "../models/products.model.js"
-
+import logger from "../../logger.js";
 
 class CartManager {
 
@@ -9,7 +9,7 @@ class CartManager {
             const carts = await cartModel.find().lean();
             return carts;
         } catch (err) {
-            console.error('Error al obtener los carritos:', err.message);
+            logger.error('Error al obtener los carritos:', err.message);
             return [];
         }
     };
@@ -28,7 +28,7 @@ class CartManager {
             }
             return cart;
         } catch (err) {
-            console.error('Error al obtener el carrito por ID:', err.message);
+            logger.error('Error al obtener el carrito por ID:', err.message);
             return err;
         }
     }
@@ -43,7 +43,7 @@ class CartManager {
             const cart = await cartModel.create(cartData);
             return cart;
         } catch (err) {
-            console.error('Error al crear el carrito:', err.message);
+            logger.error('Error al crear el carrito:', err.message);
             return err;
         }
     };
@@ -64,7 +64,7 @@ class CartManager {
 
             return await cartModel.findById(cid);
         } catch (err) {
-            console.error('Error al agregar el producto al carrito:', err.message);
+            logger.error('Error al agregar el producto al carrito:', err.message);
             return err;
         }
     };

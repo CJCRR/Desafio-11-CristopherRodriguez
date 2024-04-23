@@ -1,3 +1,5 @@
+import logger from "../logger.js";
+
 export const viewsUserRegisterController = (req, res) => {
     if (req.session.user) {
         // Si el usuario ya está autenticado, redireccionar al perfil
@@ -25,6 +27,7 @@ export const viewsUserProfileController = (req, res) => {
         age: req.session.user.age,
         cart: req.session.user.cart,
     };
+    logger.debug('UserInfo', userInfo)
     res.render('profile', userInfo);
 }
 
@@ -32,7 +35,7 @@ export const viewsUserLogoutController = (req, res) => {
     // Destruir la sesión actual del usuario
     req.session.destroy((err) => {
         if (err) {
-            console.log(err.message);
+            logger.error(err.message);
         }
         res.redirect('/login');
     });

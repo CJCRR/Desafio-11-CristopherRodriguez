@@ -2,6 +2,7 @@ import passport from 'passport';
 import jwt from 'jsonwebtoken';
 import Cart from '../dao/models/carts.model.js'
 import UserDTO from '../dto/User.js'
+import logger from '../logger.js'
 
 export const createUserController = async (req, res, next) => {
   passport.authenticate('register', async (err, user, info) => {
@@ -41,7 +42,7 @@ export const loginUserController = async (req, res) => {
     res.status(200).json({ message: 'Login successful' });
 }
 export const errorLoginUserController = (err) => {
-    console.error("Error en la autenticación:", err);
+  logger.error("Error en la autenticación:", err);
     res.status(500).send({ error: 'Error de servidor' });
 }
 
@@ -54,9 +55,9 @@ export const githubLoginUserController = async (req, res) => {
 }
 
 export const githubCallbackLoginUserController = async (req, res) => {
-    console.log('Callback: ', req.user)
+    logger.debug('Callback: ', req.user)
     req.session.user = req.user;
-    console.log('User session: ', req.session.user)
+    logger.debug('User session: ', req.session.user)
     res.redirect('/');
 }
 
@@ -103,7 +104,7 @@ export const readInfoUserController = (req, res) => {
     };
 
     const result = new UserDTO(user);
-    console.log('User: ', result)
+    logger.debug('User: ', result)
     res.status(200).json(result);
   } else {
     // Si el usuario no está autenticado, devuelve un error 401 (No autorizado)

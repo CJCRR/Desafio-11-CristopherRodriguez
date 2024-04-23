@@ -3,6 +3,7 @@ import CustomError from "../services/errors/custom_error.js";
 import EErros from "../services/errors/enums.js";
 import { generateProductErrorInfo } from "../services/errors/info.js";
 import { ProductService } from "../services/index.js";
+import logger from '../logger.js';
 
 
 export const createProductController = async (req, res) => {
@@ -17,7 +18,7 @@ export const createProductController = async (req, res) => {
                 message: "Error typing to create a product",
                 ode: EErros.INVALID_TYPES_ERROR
             })
-        console.log(errorInfo)
+          logger.error(errorInfo)
     }
 
       //const result = await Product.create(product);
@@ -29,7 +30,7 @@ export const createProductController = async (req, res) => {
       req.io.emit('productList', products); // emite el evento updatedProducts con la lista de productos
       res.status(201).json({ status: 'success', payload: result });
     } catch (error) {
-      console.log(error.cause)
+      logger.error(error.cause)
       res.status(500).json({ status: 'error', error: error.cause });
     }
 }
@@ -56,7 +57,7 @@ export const updateProductController = async (req, res) => {
   
       res.status(200).json(updatedProduct);
     } catch (error) {
-      console.log('Error al actualizar el producto:', error);
+      logger.error('Error al actualizar el producto:', error);
       res.status(500).json({ error: 'Error en el servidor' });
     }
 }
@@ -80,7 +81,7 @@ export const deleteProductController = async (req, res) => {
   
       res.status(200).json({ message: 'Producto eliminado' });
     } catch (error) {
-      console.log('Error al eliminar el producto:', error);
+      logger.error('Error al eliminar el producto:', error);
       res.status(500).json({ error: 'Error en el servidor' });
     }
 }
@@ -96,13 +97,13 @@ export const readProductController = async (req, res) => {
         res.status(404).json({ error: 'Producto no encontrado' });
       }
     } catch (error) {
-      console.log('Error al leer el producto:', error);
+      logger.error('Error al leer el producto:', error);
       res.status(500).json({ error: 'Error al leer el producto' });
     }
 }
 
 export const readAllProductsController = async (req, res) => {
-    console.log('¡Solicitud recibida!');
+  logger.http('¡Solicitud recibida!');
     
     const result = await ProductService.getAllPaginate(req)
     res.status(result.statusCode).json(result.response)

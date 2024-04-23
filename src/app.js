@@ -11,6 +11,7 @@ import viewsUserRouter from "./routes/viewsUser.router.js"
 import sessionsRouter from "./routes/sessions.router.js"
 import mailPurchaseRouter from './routes/mailPurchase.router.js'
 import mockingRouter from './routes/mocking.router.js'
+import loggerRouter from './routes/logger.router.js'
 
 import socketProducts from './listeners/socketProducts.js';
 import socketChat from './listeners/socketChat.js';
@@ -22,7 +23,7 @@ import passport from 'passport'
 import initializePassport from './config/passport.config.js'
 import config from './config/config.js';
 import errorHandler from './middleware/error.middleware.js'
-
+import logger from './logger.js';
 
 
 const port = config.port
@@ -70,6 +71,7 @@ app.use('/api/products', routerProducts);
 app.use('/api/carts', routerCarts);
 app.use('/api/email', mailPurchaseRouter);
 app.use('/mockingproducts', mockingRouter);
+app.use('logger', loggerRouter);
 
 app.use((req, res) => {
   res.render("404");
@@ -78,7 +80,7 @@ app.use((req, res) => {
 connectToDB()
 
 const httpServer = app.listen(port, () => {
-  console.log("Escuchando puerto 8080");
+  logger.info("Escuchando puerto 8080");
 });
 
 const socketServer = new Server(httpServer)

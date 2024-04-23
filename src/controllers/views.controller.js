@@ -2,6 +2,7 @@ import productModel from '../dao/models/products.model.js';
 import cartModel from "../dao/models/carts.model.js";
 import { ProductService } from '../services/index.js';
 import User from '../dao/models/user.model.js';
+import logger from '../logger.js'
 
 export const readViewsProductsController = async (req, res) => {
     try {
@@ -27,7 +28,7 @@ export const readViewsProductsController = async (req, res) => {
       // Renderizar la vista de productos y pasar los datos del usuario
     res.render('home', { ...products, userInfo });
     } catch (error) {
-        console.log('Error al leer los productos:', error);
+      logger.error('Error al leer los productos:', error);
         res.status(500).json({ error: 'Error al leer los productos' });
     }
 }
@@ -36,7 +37,7 @@ export const readViewsRealTimeProductsController = async (req, res) => {
     try {
       res.render("realtimeproducts")
     } catch (error) {
-        console.log('Error al leer los productos en tiempo real:', error);
+      logger.error('Error al leer los productos en tiempo real:', error);
         res.status(500).json({ error: 'Error al leer los productos en tiempo real' });
     }
 }

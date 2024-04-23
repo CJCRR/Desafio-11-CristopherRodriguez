@@ -1,4 +1,5 @@
 import  productsModel  from "../models/products.model.js"
+import logger from "../../logger.js"
 
 export default class ProductDAO {
     getAll = async() => await productsModel.find().lean().exec()
@@ -35,7 +36,7 @@ export default class ProductDAO {
                 statusCode: 500,
                 response: { status: 'error', error: error.message}
             }
-            console.log('Error al leer el archivo:', error);
+            logger.error('Error al leer el archivo:', error);
             // res.status(500).json({ error: 'Error al leer el archivo' });
           }
     }
