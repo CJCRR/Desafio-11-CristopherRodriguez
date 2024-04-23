@@ -71,7 +71,7 @@ app.use('/api/products', routerProducts);
 app.use('/api/carts', routerCarts);
 app.use('/api/email', mailPurchaseRouter);
 app.use('/mockingproducts', mockingRouter);
-app.use('logger', loggerRouter);
+app.use('/loggerTest', loggerRouter);
 
 app.use((req, res) => {
   res.render("404");
